@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.custom.i18n.resources" value="7Exam"/>
+
+    <package name="7Exam" extends="struts-default">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+
+        <action name="login" class="Action.LoginAction">
+            <result>/WelcomePage.jsp</result>
+            <result name="input">/LoginPage.jsp</result>
+        </action>
+
+        <action name="regist" class="Action.RegistThenLoginAction">
+            <result>/WelcomePage.jsp</result>
+            <result name="input">/RegistPage.jsp</result>
+        </action>
+
+        <action name="logoff" class="Action.LogoffAction">
+            <result>/LoginPage.jsp</result>
+        </action>
+    </package>
+
+</struts>
